@@ -141,6 +141,8 @@ Esta seção descreve **todo o fluxo realizado no ambiente SageMaker Canvas**, d
 
 **4.** Faça o upload do arquivo contendo os dados históricos de estoque
 
+Garanta que o seu arquivo esteja codificado em **UTF-8**.
+
 Estrutura do dataset utilizado:
 
 `ID_PRODUTO | DIA | FLAG_PROMOCAO | QUANTIDADE_ESTOQUE`
@@ -235,7 +237,7 @@ Após o treinamento:
 
 - **P10** (cenário pessimista)
 
-- **P50** (mediana)
+- **P50** valor mediano (mais provável)
 
 - **P90** (cenário otimista)
 
@@ -318,11 +320,7 @@ Além da utilização do SageMaker Canvas conforme proposto no curso, este proje
 
 ---
 
-
-
----
-
-## 📊 Resultados Obtidos<!--da Previsão>
+## 📊 Resultados Obtidos<!--da Previsão-->
 
 ### Tabela de Previsões
 
@@ -380,8 +378,10 @@ Valores negativos **não representam estoque físico negativo**, mas sim:
 -->
 
 ---
-
-## 🧠 Interpretação dos Resultados
+## 📊 Análise dos Resultados
+<!--
+### 🧠 Interpretação dos Resultados
+-->
 
 Durante a análise, foram observadas **previsões negativas de estoque** para alguns produtos.
 
@@ -392,6 +392,29 @@ Esses valores **não representam estoque físico negativo**, mas indicam:
 - **Alto risco de ruptura de estoque**
 
 Essa característica é esperada em modelos de previsão que **não impõem restrições físicas**, como é o caso do SageMaker Canvas.
+
+### 🔍 Interpretação dos Percentis
+
+Valores negativos **não representam erro**, mas sim **sinal de risco de ruptura**.
+
+
+| Percentil | Interpretação |
+| :---: | :---: | 
+| P10 < 0 | Risco elevado |
+| P50 < 0 | Ruptura provável |
+| P90 < 0 | Ruptura quase certa |
+📷 **Tabela x** - Interpretaçã dos percentis
+
+---
+
+### 🚦 Classificação de Risco
+
+| Condição | Indicador |
+| :---: | :---: |
+| P10 ≥ 0 | 🟢 Seguro |
+| P10 < 0 e P50 ≥ 0 | 🟡 Atenção |
+| P50 < 0 | 🔴 Ruptura provável |
+📷 **Tabela x** - Classificação de risco
 
 ---
 
@@ -425,14 +448,30 @@ Essa abordagem é amplamente utilizada em projetos reais de **Supply Chain e For
 
 ### Tabela de Risco de Ruptura
 
-| Produto | Estoque Previsto (P50) | Risco de Ruptura |
-| :---: | :---: | :---: |
-| 2 | 0 | 🔴 Alto |
-| 3 | 0 | 🔴 Alto |
-| 5 | 22 | 🟢 Baixo |
+| ID do Produto | P10 (pessimista) | P50 (mediana) | P90 (otimista) | Estoque Previsto (P50 ajustado) | Risco de Ruptura |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 2 | 0 | 0 | 0 | 0 | 🔴 Alto |
+| 3 | 0 | 0 | 0 | 0 | 🔴 Alto |
+| 5 | 0 | 0 | 0 | 22 | 🟢 Baixo |
 
 
 📷 Tabela x – Tabela de risco por produto
+
+---
+
+### Linha do tempo do estoque de alguns produtos selecionados
+
+Os gráficos da linha do tempo de todos os produtos estão dispoíveis [<u>no repositório deste projeto</u>]():
+
+- Produto x:
+
+📷 Figura x – Evolução Temporal do Estoque com Intervalo de Previsão do produto x.
+(Inserir imagem do gráfico aqui)
+
+- Produto x:
+
+📷 Figura x – Evolução Temporal do Estoque com Intervalo de Previsão do produto x.
+(Inserir imagem do gráfico aqui)
 
 ---
 
