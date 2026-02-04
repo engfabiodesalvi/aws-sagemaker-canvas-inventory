@@ -66,7 +66,7 @@ O dataset de treino possui a seguinte estrutura:
 | FLAG_PROMOCAO | Indica se  produto estava em promoção. (0 = não, 1 = sim) |
 | QUANTIDADE_ESTOQUE | Quantidade disponível em estque |
 
-Exemplo de registros:
+Exemplo utilizando os primeiros registros do *dataset*:
 
 | ID_PRODUTO | DIA	| FLAG_PROMOCAO	| QUANTIDADE_ESTOQUE |
 | :---: | :---: | :---: | :---: |
@@ -441,8 +441,18 @@ Essa abordagem é amplamente utilizada em projetos reais de **Supply Chain e For
 - Eixo Y com referência em zero
 - Produtos ordenados por risco
 
-📷 Figura 1 – Previsão de estoque com intervalo de incerteza
-(Inserir imagem do gráfico aqui)
+
+#### Gráfico de linhas
+
+<!--Markdown
+![Previsão de estoque com intervalo de incerteza](/images/graph_forecast_products_line.png)
+-->
+
+<div style="text-align: center;">
+<img src="images/graph_forecast_products_line.png" style="max-width:800px;min-width:400px;width:80%">
+</div>
+
+📷 Figura 1 – (Gráfico de linhas). Ordenação baseada no percentil P10, que representa o cenário pessimista da previsão.
 
 ---
 
