@@ -338,8 +338,8 @@ O SageMaker Canvas gerou previsões probabilísticas para cada produto, incluind
 
 A previsão de estoque obtida pelo modelo de predição é referente a **1 dia**, ou seja, ao dia **20/01/2024**, próximo dia na série temporal, e é apresentada na tabela abaixo:
 
-| ID do Produto | P10 | P50 | P90 | Média |
-| :---: | :---: | ---: | ---: | ---: |
+| ID do Produto | Dia | P10 | P50 | P90 | Média |
+| :---: | :---: | :---: | ---: | ---: | ---: |
 | 1 | 2024-01-20 | 11.870 | 15.396 | 17.470 | 14.905 |  |  |  |  |  |  |  |  | 
 | 2 | 2024-01-20 | -22.645 | -15.637 | -10.207 | -16.021 |  |  |  |  |  |  |  |  | 
 | 3 | 2024-01-20 | -26.289 | -17.811 | -11.696 | -18.653 |  |  |  |  |  |  |  |  | 
@@ -437,7 +437,8 @@ Essa abordagem é amplamente utilizada em projetos reais de **Supply Chain e For
 ### Previsão de Estoque para o Próximo Dia (P10–P90 com Mediana P50)
 
 - Linha central: P50
-- Faixa sombreada: Intervalo de incerteza (P10–P90)
+- Faixa sombreada ou formada pelas linhas superior P90 e inferior P10: Forma o intervalo de incerteza (P10–P90)
+    - Observação: **P10-P90** é a região, ou faixa de valores, dentro do intervalo de P10 até P90.
 - Eixo Y com referência em zero
 - Produtos ordenados por risco
 
@@ -452,17 +453,41 @@ Essa abordagem é amplamente utilizada em projetos reais de **Supply Chain e For
 <img src="images/graph_forecast_products_line.png" style="max-width:800px;min-width:400px;width:80%">
 </div>
 
-📷 Figura 1 – (Gráfico de linhas). Ordenação baseada no percentil P10, que representa o cenário pessimista da previsão.
+📷 Figura x – Ordenação baseada no percentil P10, que representa o cenário pessimista da previsão.
+
+#### Gráfico Combinado com área empilhada e linha
+
+<!--Markdown
+![Previsão de estoque com intervalo de incerteza](/images/graph_forecast_products_line.png)
+-->
+
+<div style="text-align: center;">
+<img src="images/graph_forecast_products_uncertainty_range.png" style="max-width:800px;min-width:400px;width:80%">
+</div>
+
+📷 Figura x – A área representa a faixa de variação esperada da previsão, enquanto a linha indica o valor central (P50).
+
+#### Gráfico de barras agrupadas com barras de erros
+
+<!--Markdown
+![Previsão de estoque com intervalo de incerteza](/images/graph_forecast_products_line.png)
+-->
+
+<div style="text-align: center;">
+<img src="images/bar_chart_forecast_products.png" style="max-width:800px;min-width:400px;width:80%">
+</div>
+
+📷 Figura x – Produtos com maior risco de ruptura apresentam valores negativos ou próximos de zero no percentil P10.
 
 ---
 
 ### Tabela de Risco de Ruptura
 
-| ID do Produto | P10 (pessimista) | P50 (mediana) | P90 (otimista) | Estoque Previsto (P50 ajustado) | Risco de Ruptura |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| 2 | 0 | 0 | 0 | 0 | 🔴 Alto |
-| 3 | 0 | 0 | 0 | 0 | 🔴 Alto |
-| 5 | 0 | 0 | 0 | 22 | 🟢 Baixo |
+| ID do Produto | P10 (pessimista) | P50 (mediana) | P90 (otimista) | Estoque Previsto (P10 ajustado) | Estoque Previsto (P50 ajustado) | Estoque Previsto (P90 ajustado) | Risco de Ruptura |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 🔴 Alto |
+| 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 🔴 Alto |
+| 5 | 0 | 0 | 0 | 22 | 0 | 0 | 0 | 🟢 Baixo |
 
 
 📷 Tabela x – Tabela de risco por produto
