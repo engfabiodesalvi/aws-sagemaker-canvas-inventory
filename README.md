@@ -485,50 +485,56 @@ Essa abordagem é amplamente utilizada em projetos reais de **Supply Chain e For
 
 
 📷 Tabela x – Estoque previsto ajustado e classificação do risco de ruptura com base em cenários pessimista (P10), mediano (P50) e otimista (P90).
-| ID do Produto | P10 (pessimista) | P50 (mediana) | P90 (otimista) | Estoque Previsto (P10 ajustado) | Estoque Previsto (P50 ajustado) | Estoque Previsto (P90 ajustado) | Risco de Ruptura |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 3 | -26.289 | -17.811 | -11.696 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 13 | -25.557 | -21.183 | -16.35 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 12 | -25.398 | -20.235 | -15.5 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 22 | -22.914 | -16.121 | -8.317 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 2 | -22.645 | -15.637 | -10.207 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 10 | -22.092 | -17.558 | -12.021 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 11 | -20.606 | -13.481 | -5.727 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 14 | -19.472 | -16.209 | -12.63 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 6 | -17.603 | -11.391 | -4.632 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 25 | -17.309 | -13.44 | -9.65 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 24 | -16.842 | -11.717 | -7.665 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 18 | -16.792 | -13.222 | -8.862 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 19 | -15.893 | -12.506 | -8.569 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 4 | -15.521 | -11.788 | -8.119 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 7 | -11.331 | -9.628 | -7.959 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 8 | -10.143 | -7.222 | -4.218 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 20 | -9.655 | -7.185 | -4.257 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 9 | -5.23 | -2.964 | -0.656 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 17 | -5.087 | -2.536 | -0.722 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 23 | -3.548 | -2.912 | -2.359 | 0 | 0 | 0 | 🔴 Ruptura provável |
-| 21 | 5.185 | 8.192 | 10.307 | 5 | 8 | 10 | 🟢 Estoque adequado |
-| 1 | 11.87 | 15.396 | 17.47 | 12 | 15 | 17 | 🟢 Estoque adequado |
-| 15 | 17.321 | 18.991 | 21.452 | 17 | 19 | 21 | 🟢 Estoque adequado |
-| 5 | 19.872 | 21.875 | 23.157 | 20 | 22 | 23 | 🟢 Estoque adequado |
-| 16 | 24.706 | 26.695 | 28.861 | 25 | 27 | 29 | 🟢 Estoque adequado |
+| ID do Produto | Estoque atual | P10 (pessimista) | P50 (mediana) | P90 (otimista) | Estoque Previsto (P10 ajustado) | Estoque Previsto (P50 ajustado) | Estoque Previsto (P90 ajustado) | Risco de Ruptura |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 3| 0 | -26.289 | -17.811 | -11.696 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 13| 0 | -25.557 | -21.183 | -16.35 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 12| 0 | -25.398 | -20.235 | -15.5 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 22| 0 | -22.914 | -16.121 | -8.317 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 2| 0 | -22.645 | -15.637 | -10.207 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 10| 0 | -22.092 | -17.558 | -12.021 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 11| 0 | -20.606 | -13.481 | -5.727 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 14| 0 | -19.472 | -16.209 | -12.63 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 6| 0 | -17.603 | -11.391 | -4.632 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 25| 0 | -17.309 | -13.44 | -9.65 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 24| 0 | -16.842 | -11.717 | -7.665 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 18| 0 | -16.792 | -13.222 | -8.862 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 19| 0 | -15.893 | -12.506 | -8.569 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 4| 0 | -15.521 | -11.788 | -8.119 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 7| 0 | -11.331 | -9.628 | -7.959 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 8| 0 | -10.143 | -7.222 | -4.218 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 20| 0 | -9.655 | -7.185 | -4.257 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 9| 0 | -5.23 | -2.964 | -0.656 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 17| 2 | -5.087 | -2.536 | -0.722 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 23| 0 | -3.548 | -2.912 | -2.359 | 0 | 0 | 0 | 🔴 Ruptura provável |
+| 21| 10 | 5.185 | 8.192 | 10.307 | 5 | 8 | 10 | 🟢 Estoque adequado |
+| 1| 16 | 11.87 | 15.396 | 17.47 | 12 | 15 | 17 | 🟢 Estoque adequado |
+| 15| 24 | 17.321 | 18.991 | 21.452 | 17 | 19 | 21 | 🟢 Estoque adequado |
+| 5| 21 | 19.872 | 21.875 | 23.157 | 20 | 22 | 23 | 🟢 Estoque adequado |
+| 16| 33 | 24.706 | 26.695 | 28.861 | 25 | 27 | 29 | 🟢 Estoque adequado |
 
 
 ---
 
-### Linha do tempo do estoque de alguns produtos selecionados
+### Evolução Temporal do Estoque com Faixa de Previsão (P10–P90)
 
-Os gráficos da linha do tempo de todos os produtos estão dispoíveis [<u>no repositório deste projeto</u>]():
+Os gráficos de evolução temporal do estoque de todos os produtos estão dispoíveis no diretório **images**:
 
-- Produto x:
+- Produto 1:
 
-📷 Figura x – Evolução Temporal do Estoque com Intervalo de Previsão do produto x.
-(Inserir imagem do gráfico aqui)
+<div style="text-align: center;">
+<img src="images/line_graph_inventory_01.png" style="max-width:800px;min-width:400px;width:80%">
+</div>
 
-- Produto x:
+📷 Figura x – Evolução Temporal do Estoque com Intervalo de Previsão do produto 1.
 
-📷 Figura x – Evolução Temporal do Estoque com Intervalo de Previsão do produto x.
-(Inserir imagem do gráfico aqui)
+- Produto 2:
+
+<div style="text-align: center;">
+<img src="images/line_graph_inventory_02.png" style="max-width:800px;min-width:400px;width:80%">
+</div>
+
+📷 Figura x – Evolução Temporal do Estoque com Intervalo de Previsão do produto 2.
 
 ---
 
